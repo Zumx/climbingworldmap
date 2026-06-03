@@ -105,5 +105,11 @@
     "message": "We use optional cookies to measure traffic anonymously.",
     "accept": "Accept",
     "reject": "Decline"
+  },
+  "explore": {
+    "title": "Best {niche} in {country}",
+    "count": "{count, number} {noun} mapped",
+    "topHeading": "Top 10 {noun} in {country}",
+    "cta": "Explore all {count, number} {noun} in {country} on the map"
   }
 }

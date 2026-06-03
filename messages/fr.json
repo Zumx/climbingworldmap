@@ -105,5 +105,11 @@
     "message": "Nous utilisons des cookies optionnels pour mesurer l’audience de façon anonyme.",
     "accept": "Accepter",
     "reject": "Refuser"
+  },
+  "explore": {
+    "title": "Meilleurs {niche} en {country}",
+    "count": "{count, number} {noun} cartographiés",
+    "topHeading": "Top 10 des {noun} en {country}",
+    "cta": "Explorer les {count, number} {noun} en {country} sur la carte"
   }
 }

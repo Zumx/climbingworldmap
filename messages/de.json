@@ -105,5 +105,11 @@
     "message": "Wir verwenden optionale Cookies zur anonymen Reichweitenmessung.",
     "accept": "Akzeptieren",
     "reject": "Ablehnen"
+  },
+  "explore": {
+    "title": "Beste {niche} in {country}",
+    "count": "{count, number} {noun} kartiert",
+    "topHeading": "Top 10 {noun} in {country}",
+    "cta": "Alle {count, number} {noun} in {country} auf der Karte entdecken"
   }
 }

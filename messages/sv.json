@@ -105,5 +105,11 @@
     "message": "Vi använder valfria cookies för anonym trafikmätning.",
     "accept": "Acceptera",
     "reject": "Neka"
+  },
+  "explore": {
+    "title": "Bästa {niche} i {country}",
+    "count": "{count, number} {noun} kartlagda",
+    "topHeading": "Topp 10 {noun} i {country}",
+    "cta": "Utforska alla {count, number} {noun} i {country} på kartan"
   }
 }
