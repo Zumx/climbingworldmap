@@ -8,3 +8,5 @@
 .env
 fetch.log
 scripts/.cache
+
+.vercel
