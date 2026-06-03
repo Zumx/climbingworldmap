@@ -1,0 +1,50 @@
+{
+  "name": "Climbing World Map",
+  "slug": "climbingworldmap",
+  "emoji": "🧗",
+  "domain": "climbingworldmap.com",
+  "colors": {
+    "primary": "#1f3a34",
+    "accent": "#f2792b"
+  },
+  "osm": {
+    "key": "sport",
+    "value": "climbing"
+  },
+  "includeRelations": false,
+  "initialCap": 8000,
+  "mappedNoun": "climbing spots",
+  "unnamedLabel": "Unnamed climbing spot",
+  "affiliateUrl": "https://www.getyourguide.com/s/?q={q}",
+  "metaFields": [
+    {
+      "key": "stat",
+      "label": "Type"
+    },
+    {
+      "key": "region",
+      "label": "Region"
+    },
+    {
+      "key": "locality",
+      "label": "Locality"
+    }
+  ],
+  "aboutText": null,
+  "locales": [
+    "en",
+    "de",
+    "fr",
+    "it",
+    "sv"
+  ],
+  "defaultLocale": "en",
+  "namedOnly": false,
+  "dataSource": {
+    "type": "overpass"
+  },
+  "googlePlaces": {
+    "enabled": false,
+    "cap": 800
+  }
+}
