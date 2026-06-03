@@ -5,7 +5,9 @@
     "blog": "Blog",
     "about": "Über",
     "countries": "Länder",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "menu": "Menü",
+    "stats": "Statistik"
   },
   "home": {
     "tagline": "Eine interaktive Weltkarte",
@@ -14,7 +16,8 @@
     "intro": "Jeder hier kartierte Ort stammt live aus OpenStreetMap. Klicke einen Punkt an, um Details, Fotos und Beschreibungen zu sehen.",
     "countriesHeading": "Nach Land durchsuchen",
     "statsCountries": "Länder",
-    "popularCountries": "Beliebte Länder"
+    "popularCountries": "Beliebte Länder",
+    "featuredHeading": "Ausgewählte Reiseziele"
   },
   "map": {
     "loading": "Karte wird geladen …",
@@ -104,7 +107,9 @@
     "namePlaceholder": "Dein Name",
     "emailPlaceholder": "Deine E-Mail",
     "button": "Abonnieren",
-    "thanks": "Danke! Deine E-Mail-App öffnet sich zur Bestätigung."
+    "thanks": "Danke! Deine E-Mail-App öffnet sich zur Bestätigung.",
+    "social": "Schließe dich {count, number}+ Reisenden an",
+    "invalid": "Bitte gib eine gültige E-Mail-Adresse ein."
   },
   "cookie": {
     "message": "Wir verwenden optionale Cookies zur anonymen Reichweitenmessung.",
@@ -140,5 +145,15 @@
     "a9": "Wir zeigen ein Foto oder eine Beschreibung nur, wenn sie bei Wikipedia, Wikimedia Commons oder Mapillary verfügbar sind. Viele {noun} wurden dort schlicht noch nicht dokumentiert.",
     "q10": "Wie kann ich Kontakt aufnehmen?",
     "a10": "Nutze den Kontaktlink in der Fußzeile oder auf der Über-Seite — wir freuen uns immer über Feedback, Korrekturen und Ideen."
+  },
+  "stats": {
+    "heading": "{niche} in Zahlen",
+    "intro": "Ein Live-Überblick über die {noun}, die {name} weltweit aus OpenStreetMap kartiert hat.",
+    "statPlaces": "{noun} kartiert",
+    "statCountries": "Abgedeckte Länder",
+    "statPosts": "Blogbeiträge",
+    "statUpdated": "Zuletzt aktualisiert",
+    "topCountries": "Top 10 Länder",
+    "byContinent": "Nach Kontinent"
   }
 }

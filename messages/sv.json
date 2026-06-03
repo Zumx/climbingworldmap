@@ -5,7 +5,9 @@
     "blog": "Blogg",
     "about": "Om",
     "countries": "Länder",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "menu": "Meny",
+    "stats": "Statistik"
   },
   "home": {
     "tagline": "En interaktiv världskarta",
@@ -14,7 +16,8 @@
     "intro": "Varje kartlagd plats nedan hämtas direkt från OpenStreetMap. Klicka på en punkt för detaljer, foton och beskrivningar.",
     "countriesHeading": "Bläddra efter land",
     "statsCountries": "länder",
-    "popularCountries": "Populära länder"
+    "popularCountries": "Populära länder",
+    "featuredHeading": "Utvalda resmål"
   },
   "map": {
     "loading": "Laddar karta…",
@@ -104,7 +107,9 @@
     "namePlaceholder": "Ditt namn",
     "emailPlaceholder": "Din e-post",
     "button": "Prenumerera",
-    "thanks": "Tack! Din e-postapp öppnas för att bekräfta."
+    "thanks": "Tack! Din e-postapp öppnas för att bekräfta.",
+    "social": "Gå med {count, number}+ resenärer",
+    "invalid": "Ange en giltig e-postadress."
   },
   "cookie": {
     "message": "Vi använder valfria cookies för anonym trafikmätning.",
@@ -140,5 +145,15 @@
     "a9": "Vi visar bara foto eller beskrivning när det finns tillgängligt från Wikipedia, Wikimedia Commons eller Mapillary. Många {noun} har helt enkelt inte dokumenterats där ännu.",
     "q10": "Hur kan jag komma i kontakt?",
     "a10": "Använd kontaktlänken i sidfoten eller på Om-sidan — vi tar alltid gärna emot feedback, rättelser och idéer."
+  },
+  "stats": {
+    "heading": "{niche} i siffror",
+    "intro": "En live-överblick över de {noun} som {name} har kartlagt världen över, från OpenStreetMap.",
+    "statPlaces": "{noun} kartlagda",
+    "statCountries": "Länder som täcks",
+    "statPosts": "Blogginlägg",
+    "statUpdated": "Senast uppdaterad",
+    "topCountries": "Topp 10 länder",
+    "byContinent": "Per kontinent"
   }
 }

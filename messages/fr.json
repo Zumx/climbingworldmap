@@ -5,7 +5,9 @@
     "blog": "Blog",
     "about": "À propos",
     "countries": "Pays",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "menu": "Menu",
+    "stats": "Statistiques"
   },
   "home": {
     "tagline": "Une carte du monde interactive",
@@ -14,7 +16,8 @@
     "intro": "Chaque lieu cartographié ci-dessous provient en direct d'OpenStreetMap. Cliquez sur un point pour voir les détails, les photos et les descriptions.",
     "countriesHeading": "Parcourir par pays",
     "statsCountries": "pays",
-    "popularCountries": "Pays populaires"
+    "popularCountries": "Pays populaires",
+    "featuredHeading": "Destinations à la une"
   },
   "map": {
     "loading": "Chargement de la carte…",
@@ -104,7 +107,9 @@
     "namePlaceholder": "Votre nom",
     "emailPlaceholder": "Votre e-mail",
     "button": "S’abonner",
-    "thanks": "Merci ! Votre messagerie va s’ouvrir pour confirmer."
+    "thanks": "Merci ! Votre messagerie va s’ouvrir pour confirmer.",
+    "social": "Rejoignez plus de {count, number} voyageurs",
+    "invalid": "Veuillez saisir une adresse e-mail valide."
   },
   "cookie": {
     "message": "Nous utilisons des cookies optionnels pour mesurer l’audience de façon anonyme.",
@@ -140,5 +145,15 @@
     "a9": "Nous n'affichons une photo ou une description que lorsqu'elle est disponible sur Wikipédia, Wikimedia Commons ou Mapillary. De nombreux {noun} n'y sont tout simplement pas encore documentés.",
     "q10": "Comment vous contacter ?",
     "a10": "Utilisez le lien de contact dans le pied de page ou sur la page À propos — nous sommes toujours ravis de recevoir retours, corrections et idées."
+  },
+  "stats": {
+    "heading": "{niche} en chiffres",
+    "intro": "Un aperçu en direct des {noun} que {name} a cartographiés dans le monde, à partir d’OpenStreetMap.",
+    "statPlaces": "{noun} cartographiés",
+    "statCountries": "Pays couverts",
+    "statPosts": "Articles de blog",
+    "statUpdated": "Dernière mise à jour",
+    "topCountries": "Top 10 des pays",
+    "byContinent": "Par continent"
   }
 }
