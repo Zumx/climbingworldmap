@@ -116,16 +116,19 @@ export default function MapView({ embedded = false }) {
       typeof window !== "undefined" && localStorage.getItem(LS_KEY) === "1";
 
     // Progressive load: a small "core" file (top-priority features) is
-    // fetched + rendered first so the map is interactive in ~1-2s even on
-    // 200k-feature sites; the larger "rest" file is then fetched while the
-    // browser is idle and appended, so the full dataset still ends up on
-    // the map without ever blocking first paint. Older deployments that
-    // predate the split have no core file — fall back to points.geojson.
+    // fetched + rendered first so the map is interactive in ~1s. The
+    // larger "rest" file is NOT prefetched — it's only fetched when the
+    // user clicks the "show all" toggle, so visitors who don't ask for
+    // unnamed features never pay the bandwidth (can be 40+ MB on dense
+    // sites like ruins). Older deployments that predate the split have
+    // no core file — fall back to points.geojson.
     const named = [];
     const unnamed = [];
     let namedAdded = 0;
     let unnamedAdded = 0;
     let toggleAdded = false;
+    let restLoaded = false;
+    let restLoading = false;
 
     const setCount = () => {
       const el = document.getElementById("point-count");
@@ -157,7 +160,7 @@ export default function MapView({ embedded = false }) {
       setCount();
     };
     const ensureToggle = () => {
-      if (toggleAdded || !unnamed.length) return;
+      if (toggleAdded) return;
       toggleAdded = true;
       const Toggle = L.Control.extend({
         onAdd() {
@@ -167,7 +170,20 @@ export default function MapView({ embedded = false }) {
           };
           label();
           L.DomEvent.disableClickPropagation(b);
-          b.addEventListener("click", () => {
+          b.addEventListener("click", async () => {
+            // First time we go to show-all, also fetch points.rest.geojson.
+            // We skip this on subsequent toggles because the data is already
+            // in memory; applyShowAll just flips layer visibility.
+            if (!showAll && !restLoaded && !restLoading) {
+              b.disabled = true;
+              await loadRest();
+              b.disabled = false;
+              // If the fetch failed, restLoaded stays false. Don't flip the
+              // toggle — leave the button labeled "show all" so the user can
+              // retry, and avoid the confusing state where the button looks
+              // toggled but no new pins appeared.
+              if (!restLoaded) return;
+            }
             showAll = !showAll;
             localStorage.setItem(LS_KEY, showAll ? "1" : "0");
             label();
@@ -190,11 +206,21 @@ export default function MapView({ embedded = false }) {
       ensureToggle();
     };
 
-    const loadRest = () =>
-      fetch("/data/points.rest.geojson")
-        .then((r) => (r.ok ? r.json() : null))
-        .then((g) => g && ingest(g.features || []))
-        .catch(() => {});
+    const loadRest = async () => {
+      if (restLoaded || restLoading) return;
+      restLoading = true;
+      try {
+        const r = await fetch("/data/points.rest.geojson");
+        if (!r.ok) return; // restLoaded stays false → click handler will not flip
+        const g = await r.json();
+        ingest(g.features || []);
+        restLoaded = true;
+      } catch {
+        // Network error: restLoaded stays false; the toggle stays usable.
+      } finally {
+        restLoading = false;
+      }
+    };
 
     fetch("/data/points.core.geojson")
       .then((r) => {
@@ -206,10 +232,10 @@ export default function MapView({ embedded = false }) {
       })
       .then((res) => {
         ingest((res && res.features) || []);
-        if (res && res.__full) return; // full set already loaded
-        const idle =
-          window.requestIdleCallback || ((fn) => setTimeout(fn, 200));
-        idle(loadRest);
+        // Pre-split deployments load the whole file in one fetch, so the
+        // toggle should behave as a pure visibility toggle (no extra fetch
+        // needed). Mark rest as already-loaded.
+        if (res && res.__full) restLoaded = true;
       })
       .catch(() => {
         const el = document.getElementById("point-count");
