@@ -16,7 +16,7 @@
   "initialCap": 8000,
   "mappedNoun": "climbing spots",
   "unnamedLabel": "Unnamed climbing spot",
-  "affiliateUrl": "https://www.getyourguide.com/s/?q={q}",
+  "affiliateUrl": "https://www.getyourguide.com/s/?q={q}%20climbing",
   "metaFields": [
     {
       "key": "stat",
